@@ -1,0 +1,75 @@
+.sliderWrapper{
+  position: relative;
+}
+
+.heroSwiper{
+  width:100%;
+  height:460px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.heroSwiper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* custom arrows */
+
+.custom-prev,
+.custom-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:white;
+  width: 0;
+  height: 0;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:10;
+  box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.sliderWrapper:hover .custom-prev,
+.sliderWrapper:hover .custom-next{
+  width:36px;
+  height:36px;
+}
+
+.custom-prev{
+  left:15px;
+}
+
+.custom-next{
+  right:15px;
+}
+
+.custom-prev svg,
+.custom-next svg{
+  font-size:18px;
+  color:red;
+}
+
+/* pagination */
+
+.custom-pagination{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+}
+
+.custom-pagination .swiper-pagination-bullet{
+  width:12px;
+  height:12px;
+  background:#d1d5db;
+  opacity:1;
+}
+
+.custom-pagination .swiper-pagination-bullet-active{
+  background:red;
+}

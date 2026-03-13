@@ -1,0 +1,49 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-prev,
+.category-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.category-next{
+    right:15px;
+  }
+
+  .category-prev svg,
+  .category-next svg{
+    font-size:18px;
+    color:red;
+  }
