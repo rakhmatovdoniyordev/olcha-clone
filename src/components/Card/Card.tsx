@@ -1,13 +1,10 @@
 import { FiHeart } from "react-icons/fi"
 import { IoCartOutline, IoStatsChart } from "react-icons/io5"
-import addCart from "@/store/cartSlice"
-import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Card = () => {
     const { t } = useTranslation("productCard");
-    const dispatch = useDispatch();
 
   return (
     <div className="group cursor-pointer">
