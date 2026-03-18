@@ -10,7 +10,7 @@ const Card = () => {
     <div className="group cursor-pointer">
         <Link to={`/detail/${1}`}>
             <div className="py-4 px-3 bg-gray-100 flex items-center justify-center rounded-2xl relative">
-                <img src="https://www.pngall.com/wp-content/uploads/20/iPhone-17-Pro-Max-Concept-Art-PNG.png" alt="Iphone 17 pro max" className="group-hover:scale-103 transition-transform duration-300"/>
+                <img src="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2026-02-25/ji6Hq3G4tIYbQQnAoKsECBXqHF1q0jPBrk31h0QgnEjdW7MgvqBhERJ3NjqO.jpg"/>
                 <div className="absolute top-2 right-2 flex flex-col items-center gap-2  text-lg">
                     <button className="p-2 rounded-full bg-white text-gray-500">
                         <FiHeart/>

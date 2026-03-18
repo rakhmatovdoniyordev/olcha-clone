@@ -62,13 +62,13 @@ const Detail = () => {
         <div className="grid grid-cols-3 gap-8 mt-8">
           <div className="col-span-1">
             <ProductSwiper
-              mainImage="https://www.pngall.com/wp-content/uploads/20/iPhone-17-Pro-Max-Concept-Art-PNG.png"
+              mainImage="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2026-02-25/ji6Hq3G4tIYbQQnAoKsECBXqHF1q0jPBrk31h0QgnEjdW7MgvqBhERJ3NjqO.jpg"
               mainImageAlt="iPhone 17 Pro Max Concept Art"
               products={[
                 {
                   id: "1",
                   thumbnail:
-                    "https://www.pngall.com/wp-content/uploads/20/iPhone-17-Pro-Max-Concept-Art-PNG.png",
+                    "https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2026-02-25/ji6Hq3G4tIYbQQnAoKsECBXqHF1q0jPBrk31h0QgnEjdW7MgvqBhERJ3NjqO.jpg",
                   alt: "iPhone 17 Pro Max Concept Art",
                 },
                 {
