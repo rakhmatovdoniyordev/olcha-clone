@@ -70,7 +70,7 @@ export default function BannerManagement() {
 
     if (editingBanner) {
       setBanners(
-        banners.map((b) =>
+        banners?.map((b) =>
           b.id === editingBanner.id ? { ...b, ...formData } : b
         )
       );
@@ -93,7 +93,7 @@ export default function BannerManagement() {
 
   const toggleActive = (id: number) => {
     setBanners(
-      banners.map((b) => (b.id === id ? { ...b, active: !b.active } : b))
+      banners?.map((b) => (b.id === id ? { ...b, active: !b.active } : b))
     );
   };
 
@@ -117,7 +117,7 @@ export default function BannerManagement() {
         </button>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 mb-10">
-        {banners.map((banner) => (
+        {banners?.map((banner) => (
           <div
             key={banner.id}
             className={`bg-white rounded-4xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.1)] ${

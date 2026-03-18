@@ -38,7 +38,7 @@ export default function DashboardLayout() {
             </button>
           </div>
           <nav className="flex-1 py-5 px-3 flex flex-col gap-2">
-            {menuItems.map((item) => {
+            {menuItems?.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
               return (

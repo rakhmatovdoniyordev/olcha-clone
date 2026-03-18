@@ -73,7 +73,7 @@ export default function ProductSwiper({
                 justifyContent: 'center',
             }}
             >
-            {products.map((product, index) => (
+            {products?.map((product, index) => (
                 <SwiperSlide key={product.id} className="flex justify-center" style={{
                     marginRight: '0px'
                 }}>

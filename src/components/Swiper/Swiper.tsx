@@ -36,7 +36,7 @@ export default function App() {
             modules={[Navigation, Pagination, Autoplay]}
             className="heroSwiper"
           >
-            {data?.data.map((item: BannerItem) => (
+            {data?.data?.map((item: BannerItem) => (
               <SwiperSlide key={item.id} className="rounded-2xl">
                 <img src={import.meta.env.VITE_BASE_URL + item.image_url} />
               </SwiperSlide>

@@ -84,7 +84,7 @@ export default function CategoryManagement() {
 
     if (editingCategory) {
       setCategories(
-        categories.map((c) =>
+        categories?.map((c) =>
           c.id === editingCategory.id ? { ...c, ...formData } : c
         )
       );
@@ -153,7 +153,7 @@ export default function CategoryManagement() {
               </tr>
             </thead>
             <tbody>
-              {categories.map((category) => (
+              {categories?.map((category) => (
                 <tr
                   key={category.id}
                   className="transition-all duration-300 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"

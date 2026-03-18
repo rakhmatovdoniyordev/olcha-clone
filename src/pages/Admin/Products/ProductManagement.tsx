@@ -133,7 +133,7 @@ export default function ProductManagement() {
 
     if (editingProduct) {
       setProducts(
-        products.map((p) =>
+        products?.map((p) =>
           p.id === editingProduct.id ? { ...p, ...formData } : p
         )
       );
@@ -198,7 +198,7 @@ export default function ProductManagement() {
         />
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-5 mb-8">
-        {filteredProducts.map((product) => (
+        {filteredProducts?.map((product) => (
           <div
             key={product.id}
             className={`group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 ${

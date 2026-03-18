@@ -125,7 +125,7 @@ export default function DetailBottom() {
               <div className="w-full flex items-center justify-between">
                 <div className="text-4xl font-bold">{averageRating}</div>
                 <div className="flex gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
+                  {[1, 2, 3, 4, 5]?.map((star) => (
                     <FaRegStar
                       key={star}
                       size={20}
@@ -151,7 +151,7 @@ export default function DetailBottom() {
           </div>
           {reviews.length > 0 && (
             <div className="space-y-4">
-              {reviews.map((review) => (
+              {reviews?.map((review) => (
                 <div key={review.id} className="border rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
@@ -166,7 +166,7 @@ export default function DetailBottom() {
                     </button>
                   </div>
                   <div className="flex gap-1 mb-2">
-                    {[1, 2, 3, 4, 5].map((star) => (
+                    {[1, 2, 3, 4, 5]?.map((star) => (
                       <FaRegStar
                         key={star}
                         size={16}
@@ -230,7 +230,7 @@ export default function DetailBottom() {
                   </a>
                 </div>
               </div>
-              {questions.map((question) => (
+              {questions?.map((question) => (
                 <div key={question.id} className="border rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
@@ -277,7 +277,7 @@ export default function DetailBottom() {
                 {t("evaluation")}:
               </label>
               <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((star) => (
+                {[1, 2, 3, 4, 5]?.map((star) => (
                   <button
                     key={star}
                     onClick={() => setUserRating(star)}

@@ -97,7 +97,7 @@ export default function DashboardHome() {
         </p>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 mb-10">
-        {stats.map((stat, index) => {
+        {stats?.map((stat, index) => {
           const Icon = stat.icon;
           return (
             <div
@@ -134,7 +134,7 @@ export default function DashboardHome() {
           </span>
         </div>
         <div className="flex flex-col gap-4">
-          {recentActivities.map((activity) => (
+          {recentActivities?.map((activity) => (
             <div
               key={activity.id}
               className={`flex items-center gap-4 p-4 rounded-3xl transition-all duration-300 hover:translate-x-1.5 border-l-4 ${

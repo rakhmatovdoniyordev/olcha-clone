@@ -140,7 +140,7 @@ const Detail = () => {
                 </div>
               </div>
               <div className="w-full pt-4">
-                {specs.map((item, index) => (
+                {specs?.map((item, index) => (
                   <div key={index} className="flex items-center text-sm py-1">
                     <span className="text-gray-500 whitespace-nowrap">
                       {item.label}
