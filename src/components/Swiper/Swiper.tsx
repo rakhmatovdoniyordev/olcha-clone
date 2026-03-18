@@ -6,8 +6,14 @@ import "swiper/swiper-bundle.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 import "./style.css";
+import { useBanner } from "@/hooks/banner/useBanner";
+import type { BannerItem } from "@/types";
+
 
 export default function App() {
+  const { data } = useBanner();
+
+
   return (
     <section className="py-6">
       <div className="container mx-auto">
@@ -30,6 +36,11 @@ export default function App() {
             modules={[Navigation, Pagination, Autoplay]}
             className="heroSwiper"
           >
+            {data?.data.map((item: BannerItem) => (
+              <SwiperSlide key={item.id} className="rounded-2xl">
+                <img src={import.meta.env.VITE_BASE_URL + item.image_url} />
+              </SwiperSlide>
+            ))}
             <SwiperSlide>
               <img src="https://olcha.uz/image/1400x460/sliders/oz/cdn_1/2025-12-11/Mo8aflKeapAw638rn1tzQHjYFnH6LChZ0UJBkdPvQjYf9r1J1w7Pu1e3jpyv.jpg" />
             </SwiperSlide>
@@ -46,17 +57,12 @@ export default function App() {
               <img src="https://olcha.uz/image/1400x460/sliders/oz/wlbm9PFaCBreiwmAIQP21ybTyQrvDvV3rNBW7NORQX8xsAXKlHtp8Tp8SQFp.jpg" />
             </SwiperSlide>
           </Swiper>
-
-          {/* Custom navigation */}
           <div className="custom-prev">
             <IoChevronBack />
           </div>
-
           <div className="custom-next">
             <IoChevronForward />
           </div>
-
-          {/* Pagination */}
           <div className="custom-pagination"></div>
         </div>
       </div>

@@ -20,4 +20,4 @@ const favouriteSlice = createSlice({
 
 
 export const { toggleFavourite } = favouriteSlice.actions;
-export default favouriteSlice;
+export default favouriteSlice.reducer;

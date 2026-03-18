@@ -1,7 +1,9 @@
 import { RxHamburgerMenu } from "react-icons/rx";
-import { navItems } from "../static";
+import { navItems } from "@/static";
 import { IoClose, IoSearchOutline, IoSettings } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,7 +11,10 @@ const Header = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [bottomScroll, setBottomScroll] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("uz");
+  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem("i18nextLng") || "uz");
+
+  const { t } = useTranslation("header");
+  const { i18n } = useTranslation();
 
   const languages = [
     { code: "uz", name: "O'zbek" },
@@ -18,6 +23,7 @@ const Header = () => {
   ];
 
   const handleLanguageSelect = (langCode: string): void => {
+    i18n.changeLanguage(langCode);
     setSelectedLanguage(langCode);
     setIsSettingsOpen(false);
     console.log(`Selected language: ${langCode}`);
@@ -44,6 +50,14 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isKatalogOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    }
+  }, [isKatalogOpen])
+
   return (
     <>
       <header
@@ -54,7 +68,7 @@ const Header = () => {
         <div className="container">
           <nav className="w-full flex items-center justify-between gap-4 py-4 md:py-6 lg:h-24 lg:gap-8">
             <div className="shrink-0">
-              <a href="">
+              <a href="/">
                 <img
                   src="https://olcha.uz/_nuxt/plus.lRzD4Jf7.png"
                   alt="Olcha logo"
@@ -88,7 +102,7 @@ const Header = () => {
                   ></span>
                 </div>
 
-                <span>Katalog</span>
+                <span>{t("catalog")}</span>
               </button>
             </div>
 
@@ -96,7 +110,7 @@ const Header = () => {
               <form className="w-full bg-gray-100 px-4 md:px-6 py-2 md:py-4 rounded-lg md:rounded-xl relative h-13.75 flex items-center">
                 <input
                   type="text"
-                  placeholder="Qidirish"
+                  placeholder={t("searchPlaceholder")}
                   className="w-full bg-transparent py-1 md:py-2 pr-12 focus:outline-none transition-all duration-300"
                 />
                 <button
@@ -111,15 +125,15 @@ const Header = () => {
             <ul className="hidden lg:flex items-center gap-4 lg:gap-6">
               {navItems.map((item, i) => (
                 <li key={i}>
-                  <a
+                  <Link
                     className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all duration-300 hover:text-red-600 hover:bg-red-50 group"
-                    href="#"
+                    to={item.link}
                   >
                     <item.icon className="text-xl lg:text-2xl group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-xs lg:text-sm font-medium">
-                      {item.text}
+                      {t(item.key)}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -143,7 +157,7 @@ const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <item.icon className="text-xl" />
-                      <span className="font-medium">{item.text}</span>
+                      <span className="font-medium">{t(item.key)}</span>
                     </a>
                   </li>
                 ))}
@@ -191,7 +205,7 @@ const Header = () => {
               <div className="absolute bottom-16 right-0 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
                 <div className="p-2">
                   <p className="px-4 py-2 text-sm font-semibold text-gray-700">
-                    Til tanlang
+                    {t("language")}
                   </p>
                   {languages.map((lang) => (
                     <button

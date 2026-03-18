@@ -1,3 +1,16 @@
-*{
-    scroll-behavior: smooth;
+* {
+  scroll-behavior: smooth;
+}
+
+.hide-scrollbar {
+  overflow-y: auto;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
 }
